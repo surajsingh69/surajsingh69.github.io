@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Signup - AIToolNotes</title>
+    <meta name="description" content="Get the latest free AI tools, comparisons, and guides delivered to your inbox. Join the AIToolNotes newsletter.">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-family: inherit;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .privacy-note {
+            margin-top: 20px;
+            color: #888;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .privacy-note a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .privacy-note a:hover {
+            text-decoration: underline;
+        }
+
+        .benefits {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9ff;
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .benefits h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .benefits li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-message {
+            display: none;
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .logo {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🤖</div>
+        <h1>Free AI Tools Weekly</h1>
+        <p class="subtitle">Get the latest free AI tools, honest comparisons, and step-by-step guides delivered to your inbox every week.</p>
+
+        <div class="benefits">
+            <h3>What you'll get:</h3>
+            <ul>
+                <li>Curated list of the best new free AI tools</li>
+                <li>Honest comparisons (free vs paid, limitations, real-world use cases)</li>
+                <li>Step-by-step tutorials for AI tool stacks</li>
+                <li>No spam, unsubscribe anytime</li>
+            </ul>
+        </div>
+
+        <form id="newsletterForm">
+            <div class="form-group">
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    required
+                    autocomplete="email"
+                >
+            </div>
+            <button type="submit">Subscribe Free</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <strong>Welcome aboard!</strong> Check your inbox for a confirmation email.
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            <strong>Something went wrong.</strong> Please try again later.
+        </div>
+
+        <p class="privacy-note">
+            We respect your privacy. Unsubscribe at any time.<br>
+            By subscribing, you agree to our <a href="/privacy.html">Privacy Policy</a>.
+        </p>
+    </div>
+
+    <script>
+        // Newsletter signup using Formspree or Netlify Forms
+        // Replace the action URL with your form endpoint
+        const form = document.getElementById('newsletterForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+
+            // Using Formspree (free tier: 50 submissions/month)
+            // Sign up at https://formspree.io/ and replace with your form ID
+            const formspreeEndpoint = 'https://formspree.io/f/your-form-id';
+
+            try {
+                const response = await fetch(formspreeEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email, source: 'aitoolnotes_newsletter' }),
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Fallback: open email client
+                const mailtoLink = `mailto:surajjsingh0111@gmail.com?subject=Newsletter Signup&body=Please add ${email} to the AIToolNotes newsletter.`;
+                window.location.href = mailtoLink;
+
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+                successMessage.innerHTML = '<strong>Thanks!</strong> Please send the confirmation email to complete your subscription.';
+            }
+        });
+    </script>
+</body>
+</html>
